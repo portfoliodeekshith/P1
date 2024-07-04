@@ -5,7 +5,7 @@ import Timeline from "./timeline/Timeline";
 
 function Homepage() {
     return (
-        <div className='homepage'>
+        <div className="homepage">
            <div className="homepage__nav">
            <Sidenav />  
            </div>
