@@ -7,18 +7,22 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
-function Post() {
+function Post({user, postImage, likes, timestamp}) {
     return (
         <div className="post">
             <div className="post__header">
                 <div className="post__headerAuthor">
-                <Avatar>D</Avatar>
-                Devara . <span>12h</span>
+                <Avatar>
+                {user.charAt(0).toUpperCase()}
+                </Avatar>{" "}
+                {user} . <span>{timestamp}</span>
                 </div>
                 <MoreHoriz />
                 </div>
             <div className="post__image">
-                <img src="https://www.istockphoto.com/resources/images/FreePhotos/Free-Photo-740x492-2058274222.jpg" alt="" />
+                <img src={postImage} 
+                alt="" 
+                />
             </div>
             <div className="post__footer">
                 <div className="post__footerIcons">
@@ -31,7 +35,7 @@ function Post() {
                         <BookmarkBorderIcon className="postIcon"/>
                     </div>
                 </div>
-                Liked by 25 people.
+                Liked by {likes} people.
             </div>
         </div>
     )
